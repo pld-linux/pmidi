@@ -1,7 +1,7 @@
 Summary:	Midi player for alsa
 Summary(pl):	Odtwarzacz midi dla ALSY
 Name:		pmidi
-Version:	1.4.1
+Version:	1.5.5
 Release:	1
 License:	GPL v2
 Group:		Applications/Sound
@@ -23,14 +23,18 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 %setup -q
 
 %build
+%{__aclocal} 
+%{__autoconf}
+%{__automake}
+
+%configure \
+	--prefix=/usr
+
 %{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
-
-install %{name} $RPM_BUILD_ROOT%{_bindir}
-install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 
 %clean
@@ -39,5 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%doc README
+%doc README ChangeLog AUTHORS NEWS
 %{_mandir}/man1/*
