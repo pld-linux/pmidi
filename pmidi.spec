@@ -26,7 +26,7 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 %setup -q
 
 %build
-%{__aclocal} 
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
