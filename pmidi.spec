@@ -6,8 +6,9 @@ Release: 	1
 Copyright:      GPL
 Group:          Applications/Sound
 Group(pl):      Aplikacje/D¼wiêk
-URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 Source: 	http://www.parabola.demon.co.uk/alsa/%{name}-%{version}.tar.gz
+URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
+BuildRequires:	alsa-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -27,13 +28,12 @@ make CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install -s %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.1  $RPM_BUILD_ROOT%{_mandir}/man1/
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,4 +42,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
 %doc README
-%{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/*
