@@ -11,8 +11,8 @@ BuildRequires:	alsa-lib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A straightforward command line program to play midi files through the ALSA 
-sequencer. Usage: 'pmidi -p client:port plik.mid'
+A straightforward command line program to play midi files through the
+ALSA sequencer. Usage: 'pmidi -p client:port plik.mid'
 
 %description -l pl
 Program odtwarzaj±cy pliki midi poprzez drivery ALSA. U¿ycie 'pmidi -p
