@@ -9,7 +9,7 @@ Group(pl):      Aplikacje/D¼wiêk
 Source: 	http://www.parabola.demon.co.uk/alsa/%{name}-%{version}.tar.gz
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 BuildRequires:	alsa-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Midi player for alsa
