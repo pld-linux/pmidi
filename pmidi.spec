@@ -23,7 +23,7 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 %setup -q
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
