@@ -1,19 +1,20 @@
 Summary:	Midi player for alsa
 Summary(pl):	Odtwarzacz midi dla ALSY
 Name:		pmidi
-Version:	1.2.4
+Version:	1.4.1
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
-Source0:	http://www.parabola.demon.co.uk/alsa/%{name}-%{version}.tar.gz
+Source0:	http://download.sourceforge.net/pmidi/%{name}-%{version}.tar.gz
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
-BuildRequires:	alsa-devel
+BuildRequires:	alsa-lib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Midi player for alsa.
+A straightforward command line program to play midi files through the ALSA 
+sequencer. Usage: 'pmidi -p client:port plik.mid'
 
 %description -l pl
 Program odtwarzaj±cy pliki midi poprzez drivery ALSA. U¿ycie 'pmidi -p
@@ -33,11 +34,13 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
+gzip -9nf README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%doc README
+%doc *.gz
 %{_mandir}/man1/*
