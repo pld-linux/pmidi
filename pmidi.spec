@@ -1,12 +1,12 @@
-Summary:	Midi player for alsa
-Summary(pl):	Odtwarzacz midi dla ALSY
+Summary:	MIDI player for ALSA sequencer
+Summary(pl):	Odtwarzacz MIDI dla sekwencera ALSA
 Name:		pmidi
-Version:	1.5.5
+Version:	1.6.0
 Release:	1
 License:	GPL v2
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	43e97dd991c3bfc5ef019fec888d5d75
+# Source0-md5:	e81a92626dbcc1deb917e49f0737fb32
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
@@ -14,13 +14,13 @@ BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A straightforward command line program to play midi files through the
-ALSA sequencer. Usage: 'pmidi -p client:port plik.mid'
+pmidi is a command line MIDI player for ALSA.  It can play to any
+MIDI device that is supported by ALSA.
 
 %description -l pl
-Program odtwarzaj±cy pliki midi poprzez drivery ALSA. U¿ycie 'pmidi -p
-client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
-- -l'. Przyk³ad: 'pmidi -p 65:0 impromptu.mid'
+pmidi jest odtwarzaczem plików MIDI dla ALSA, dzia³aj±cym z linii
+poleceñ. Mo¿e odtwarzaæ do ka¿dego z urz±dzeñ MIDI wspieranych
+przez ALSA.
 
 %prep
 %setup -q
@@ -29,9 +29,7 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure \
-	--prefix=/usr
-
+%configure
 %{__make} CFLAGS="%{rpmcflags}"
 
 %install
