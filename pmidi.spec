@@ -30,11 +30,14 @@ przez ALSA.
 %{__autoconf}
 %{__automake}
 %configure
-%{__make} CFLAGS="%{rpmcflags}"
+
+%{__make} \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
