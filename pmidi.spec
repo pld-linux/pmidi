@@ -32,7 +32,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
-gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,5 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%doc *.gz
+%doc README
 %{_mandir}/man1/*
