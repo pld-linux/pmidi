@@ -5,7 +5,7 @@ Version:	1.5.5
 Release:	1
 License:	GPL v2
 Group:		Applications/Sound
-Source0:	http://download.sourceforge.net/pmidi/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	43e97dd991c3bfc5ef019fec888d5d75
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 BuildRequires:	alsa-lib-devel
