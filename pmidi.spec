@@ -9,6 +9,8 @@ Source0:	http://download.sourceforge.net/pmidi/%{name}-%{version}.tar.gz
 # Source0-md5:	43e97dd991c3bfc5ef019fec888d5d75
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 BuildRequires:	alsa-lib-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +29,6 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 %{__aclocal} 
 %{__autoconf}
 %{__automake}
-
 %configure \
 	--prefix=/usr
 
@@ -37,12 +38,11 @@ client:port plik.mid' Parametr client:port mo¿na uzyskaæ przez 'pmidi
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/%{name}
 %doc README ChangeLog AUTHORS NEWS
+%attr(755,root,root) %{_bindir}/%{name}
 %{_mandir}/man1/*
