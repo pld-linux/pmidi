@@ -5,8 +5,6 @@ Version:	1.4.1
 Release:	1
 License:	GPL v2
 Group:		Applications/Sound
-Group(de):	Applikationen/Laut
-Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://download.sourceforge.net/pmidi/%{name}-%{version}.tar.gz
 URL:		http://www.parabola.demon.co.uk/alsa/pmidi.html
 BuildRequires:	alsa-lib-devel
