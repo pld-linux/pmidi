@@ -1,5 +1,5 @@
 Summary:	MIDI player for ALSA sequencer
-Summary(pl):	Odtwarzacz MIDI dla sekwencera ALSA
+Summary(pl.UTF-8):   Odtwarzacz MIDI dla sekwencera ALSA
 Name:		pmidi
 Version:	1.6.0
 Release:	1
@@ -17,9 +17,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 pmidi is a command line MIDI player for ALSA.  It can play to any
 MIDI device that is supported by ALSA.
 
-%description -l pl
-pmidi jest odtwarzaczem plików MIDI dla ALSA, dzia³aj±cym z linii
-poleceñ. Mo¿e odtwarzaæ do ka¿dego z urz±dzeñ MIDI wspieranych
+%description -l pl.UTF-8
+pmidi jest odtwarzaczem plikÃ³w MIDI dla ALSA, dziaÅ‚ajÄ…cym z linii
+poleceÅ„. MoÅ¼e odtwarzaÄ‡ do kaÅ¼dego z urzÄ…dzeÅ„ MIDI wspieranych
 przez ALSA.
 
 %prep
