@@ -1,5 +1,5 @@
 Summary:	MIDI player for ALSA sequencer
-Summary(pl.UTF-8):   Odtwarzacz MIDI dla sekwencera ALSA
+Summary(pl.UTF-8):	Odtwarzacz MIDI dla sekwencera ALSA
 Name:		pmidi
 Version:	1.6.0
 Release:	1
